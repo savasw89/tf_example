@@ -4,6 +4,10 @@ variable "domain_name" {}
 variable "password" {}
 variable "tenant_name" {}
 
+terraform {
+  backend "s3" {}
+}
+
 provider "opentelekomcloud" {
   user_name   = "${var.user_name}"
   domain_name = "${var.domain_name}"
